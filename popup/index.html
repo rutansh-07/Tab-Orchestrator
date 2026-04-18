@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Orchestrator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container fade-in">
+    <header>
+      <div class="header-top">
+        <div class="brand">
+          <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <h1>Tab Orchestrator</h1>
+        </div>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle Night/Light Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+      <p class="subtitle">Zero-Trust Intent Prediction</p>
+    </header>
+
+    <main>
+      <div class="controls-card">
+        <div class="toggle-row">
+          <label for="focusToggle" class="toggle-label">
+            <span class="icon">🎯</span> Organize Tabs
+          </label>
+          <label class="switch">
+            <input type="checkbox" id="focusToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="workspace-section">
+        <div class="section-label-row">
+          <label for="workspaceSelect" class="section-label">Active Workspace</label>
+          <div style="display: flex; gap: 4px;">
+            <button id="removeWorkspaceBtn" class="add-btn" aria-label="Remove Workspace" style="display: none; color: #f87171;" title="Delete Workspace">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+            <button id="addWorkspaceBtn" class="add-btn" aria-label="Add Workspace" title="Add Workspace">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
+          </div>
+        </div>
+        
+        <div id="addWorkspaceDiv" class="add-workspace-row" style="display: none;">
+          <input type="text" id="newWorkspaceInput" placeholder="e.g. Gaming" class="styled-input">
+          <button id="saveWorkspaceBtn" class="save-btn">Add</button>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="workspaceSelect" class="styled-select">
+            <option value="Development">Development</option>
+            <option value="Research">Research</option>
+            <option value="Finance">Finance</option>
+            <option value="Personal">Personal</option>
+            <option value="General">General</option>
+          </select>
+          <div class="select-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+
+      <div class="info-section">
+        <div class="badge secure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Local AI
+        </div>
+        <span class="text">Encrypted Storage</span>
+      </div>
+    </main>
+  </div>
+  
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

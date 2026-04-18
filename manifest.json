@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Orchestrator",
+  "version": "1.0.0",
+  "description": "Zero-Trust, Local AI-driven tab grouping and Focus Mode extension.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "tabGroups"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/index.html"
+  }
+}
